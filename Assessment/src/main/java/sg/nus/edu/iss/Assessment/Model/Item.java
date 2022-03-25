@@ -1,12 +1,12 @@
 package sg.nus.edu.iss.Assessment.Model;
 
 public class Item {
-	private String itemName;
+	private String item;
 	private Integer quantity;
 
 	public Item(String itemName, Integer quantity) {
 		super();
-		this.itemName = itemName;
+		this.item = itemName;
 		this.quantity = quantity;
 	}
 
@@ -14,12 +14,12 @@ public class Item {
 
 	}
 
-	public String getItemName() {
-		return itemName;
+	public String getItem() {
+		return item;
 	}
 
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
+	public void setItem(String item) {
+		this.item = item;
 	}
 
 	public Integer getQuantity() {
@@ -32,7 +32,7 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [itemName=" + itemName + ", quantity=" + quantity + "]";
+		return "Item [item=" + item + ", quantity=" + quantity + "]";
 	}
 
 }

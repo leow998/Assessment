@@ -6,7 +6,7 @@ public class Order {
 	private String name;
 	private String address;
 	private String email;
-	private List<Item> items;
+	private List<Item> lineItems;
 
 	public String getName() {
 		return name;
@@ -32,12 +32,12 @@ public class Order {
 		this.email = email;
 	}
 
-	public List<Item> getItems() {
-		return items;
+	public List<Item> getLineItems() {
+		return lineItems;
 	}
 
-	public void setItems(List<Item> items) {
-		this.items = items;
+	public void setLineItems(List<Item> items) {
+		this.lineItems = items;
 	}
 
 	public Order(String name, String address, String email, List<Item> items) {
@@ -45,7 +45,7 @@ public class Order {
 		this.name = name;
 		this.address = address;
 		this.email = email;
-		this.items = items;
+		this.lineItems = items;
 	}
 
 	public Order() {
@@ -54,7 +54,7 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [name=" + name + ", address=" + address + ", email=" + email + ", items=" + items + "]";
+		return "Order [name=" + name + ", address=" + address + ", email=" + email + ", lineItems=" + lineItems + "]";
 	}
 
 }

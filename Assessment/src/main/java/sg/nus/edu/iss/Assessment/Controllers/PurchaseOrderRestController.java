@@ -27,8 +27,8 @@ public class PurchaseOrderRestController {
 	@RequestMapping(value = "/api/po", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> purchaseOrder(@RequestBody Order order) {
 		List<String> items = new ArrayList<String>();
-		for (Item item : order.getItems()) {
-			items.add(item.getItemName());
+		for (Item item : order.getLineItems()) {
+			items.add(item.getItem());
 		}
 		Optional<Quotation> quotations = qtsvc.getQuotations(items);
 		if (quotations.isEmpty()) {
@@ -37,8 +37,8 @@ public class PurchaseOrderRestController {
 
 		Quotation quotation = quotations.get();
 		Float total = 0.0f;
-		for (Item item : order.getItems()) {
-			Float unitPrice = quotation.getQuotation(item.getItemName());
+		for (Item item : order.getLineItems()) {
+			Float unitPrice = quotation.getQuotation(item.getItem());
 			total += item.getQuantity() * unitPrice;
 		}
 
